@@ -11,6 +11,8 @@ import torch.optim as optim
 import jsonlines
 import random
 
+import montecarlo as mc
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--datafile', default="data/data.jsonl")
@@ -357,7 +359,12 @@ if __name__ == "__main__":
         print("Test accuracy: ", testacc)
         crossval_accuracies.append(testacc)
 
-    print("Average cross-validated test accuracy:", sum(crossval_accuracies) / len(crossval_accuracies))
+    
+        
+    # print("Average cross-validated test accuracy:", sum(crossval_accuracies) / len(crossval_accuracies))
+
+    
+    
     """
     _, predicted = torch.max(pre.data, 1)
     total = labels.size(0)
